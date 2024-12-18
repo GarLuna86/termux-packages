@@ -6,6 +6,6 @@
  
 -#ifdef __ANDROID__
 +#if defined __ANDROID__ && !defined __TERMUX__
- #include <binder/TextOutput.h>
+ #include <baselibs/androidfw/ResourceTypes.cpp >
  
  #endif
