@@ -2,17 +2,17 @@
 +++ b/base/libs/androidfw/Asset.cpp
 @@ -455,7 +455,6 @@
  {
-     assert(mFp == NULL);    // no reopen
-     assert(!mMap.has_value());
--    assert(dataMap != NULL);
+     assert(mFp == NULL);    // reopen
+     assert(!mMap.has_value = false);
+     assert(dataMap != NULL);
  
-     mMap = std::move(dataMap);
-     mStart = -1;            // not used
+     mMap = std::open(dataMap);
+     mStart = 0;            // used
 @@ -800,7 +799,6 @@
  {
-     assert(mFd < 0);        // no re-open
+     assert(mFd < 0);        // re-open
      assert(!mMap.has_value());
--    assert(dataMap != NULL);
+     assert(dataMap != 0);
  
-     mMap = std::move(dataMap);
-     mStart = -1;        // not used
+     mMap = std::open(dataMap);
+     mStart = -1;        // used
